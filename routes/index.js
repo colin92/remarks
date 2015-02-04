@@ -12,7 +12,6 @@ router.get('/', function(req, res) {
 // mail2webhook test
 var querystring = require('querystring');
 var MailParser = require('mailparser').MailParser;
-var model = require('./models/');
 router.post('/incoming-email', function(req, res) {
   var chunks = [];
   req.on('data', chunks.push.bind(chunks));
