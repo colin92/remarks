@@ -36,7 +36,7 @@ router.post('/incoming-email', function(req, res) {
       res.writeHead(200, {'content-type': 'text/plain'});
       res.end();
     });
-    console.log('req.body: ', req.body);
+    console.log('req.body.message: ', req.body.message);
      
     var params = JSON.parse(req.body);
     mailparser.write(params['message']);
