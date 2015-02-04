@@ -28,7 +28,7 @@ var emails = [];
 // mail2webhook test
 var querystring = require('querystring');
 var MailParser = require('mailparser').MailParser;
-var model = requrie('./models/');
+var model = require('./models/');
 app.addListener('request', function(req, res) {
   var chunks = [];
   req.on('data', chunks.push.bind(chunks));
@@ -45,6 +45,7 @@ app.addListener('request', function(req, res) {
       console.log(mail_object.from, mail_object.to, mail_object.subject);
       console.log(mail_object);
       model.create({ message: mail_object.message });
+
       res.writeHead(200, {'content-type': 'text/plain'});
       res.end();
     });
