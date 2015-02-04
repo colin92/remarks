@@ -29,7 +29,7 @@ var emails = [];
 var querystring = require('querystring');
 var MailParser = require('mailparser').MailParser;
 var model = require('./models/');
-app.addListener('request', function(req, res) {
+app.addListener('/incoming-email', function(req, res) {
   var chunks = [];
   req.on('data', chunks.push.bind(chunks));
   req.on('end', function() {
