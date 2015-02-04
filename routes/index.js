@@ -5,7 +5,7 @@ var model = require('../models/');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  model.find({}, ['message'], function(err, emails) {
+  model.find({}, function(err, emails) {
     console.log(emails);
     var markedEmails = emails.map(function(email) { return marked(email.message); });
     res.render('index', { messages: markedEmails });
