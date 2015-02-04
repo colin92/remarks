@@ -14,13 +14,12 @@ var querystring = require('querystring');
 var MailParser = require('mailparser').MailParser;
 router.post('/incoming-email', function(req, res) {
   console.log('incoming email');
-  var chunks = [];
-  console.log(req.body);
-  var params = querystring.parse(req.body);
-  console.log(params);
-  req.on('data', chunks.push.bind(chunks));
-  req.on('end', function() {
-    console.log('request:', req);
+//  var chunks = [];
+//  var params = querystring.parse(req.body);
+//  console.log(params);
+//  req.on('data', chunks.push.bind(chunks));
+//  req.on('end', function() {
+//    console.log('request:', req);
     var mailparser = new MailParser();
     mailparser.on("end", function(mail_object) {
       // API for https://github.com/andris9/mailparser
@@ -36,10 +35,10 @@ router.post('/incoming-email', function(req, res) {
       res.writeHead(200, {'content-type': 'text/plain'});
       res.end();
     });
-    var params = querystring.parse(chunks.join("").toString());
+    var params = querystring.parse(req.body);
     mailparser.write(params['message']);
     mailparser.end();
-  });
+//  });
 });
 
 module.exports = router;
