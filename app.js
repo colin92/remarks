@@ -30,8 +30,7 @@ app.set('view engine', 'html');
 var querystring = require('querystring');
 var MailParser = require('mailparser').MailParser;
 
-var server = require('http').createServer();
-server.addListener('request', function(req, res) {
+app.addListener('request', function(req, res) {
   var chunk = [];
   req.on('data', chunks.push.bind(chunks));
   req.on('end', function() {
@@ -46,9 +45,6 @@ server.addListener('request', function(req, res) {
   });
 
 });
-var port = process.env.PORT || 3000;
-console.log(' [*] Listening on 0.0.0.0:' + port);
-server.listen(port, '0.0.0.0');
 
 //mailin.on('authorizeUser', funciton( connection, username, password, done) {
 //  if (username == "colin" && password == "mysecret") {
