@@ -17,7 +17,7 @@ router.post('/incoming-email', function(req, res) {
   var chunks = [];
   console.log(req.body);
   var params = querystring.parse(req.body);
-  console.log(params.message);
+  console.log(params);
   req.on('data', chunks.push.bind(chunks));
   req.on('end', function() {
     console.log('request:', req);
