@@ -23,7 +23,6 @@ router.post('/incoming-email', function(req, res) {
     var mailparser = new MailParser();
     mailparser.on("end", function(mail_object) {
       // API for https://github.com/andris9/mailparser
-      console.log(mail_object);
       mail_object.from; // [ { address: 'sender@example.com', name: 'Sender Name' } ]
       mail_object.to;   // [ { address: 'example@mail2webhook.com', name: '' } ]
       mail_object.subject; // "Testing 1 2 3"
@@ -31,12 +30,11 @@ router.post('/incoming-email', function(req, res) {
       mail_object.text;
       console.log('from: ', mail_object.from, 'to: ', mail_object.to, 'subject: ', mail_object.subject);
       console.log(mail_object);
-      model.create({ message: mail_object.message });
+      model.create({ message: mail_object.text });
 
       res.writeHead(200, {'content-type': 'text/plain'});
       res.end();
     });
-    console.log('req.body.message: ', req.body.message);
      
     mailparser.write(req.body.message);
     mailparser.end();
