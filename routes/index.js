@@ -13,12 +13,13 @@ router.get('/', function(req, res) {
 var querystring = require('querystring');
 var MailParser = require('mailparser').MailParser;
 router.post('/incoming-email', function(req, res) {
+  console.log('incoming email');
   var chunks = [];
   req.on('data', chunks.push.bind(chunks));
   req.on('end', function() {
+    console.log('request:', req);
     var mailparser = new MailParser();
     mailparser.on("end", function(mail_object) {
-
       // API for https://github.com/andris9/mailparser
       mail_object.from; // [ { address: 'sender@example.com', name: 'Sender Name' } ]
       mail_object.to;   // [ { address: 'example@mail2webhook.com', name: '' } ]
