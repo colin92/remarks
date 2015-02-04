@@ -46,7 +46,9 @@ server.addListener('request', function(req, res) {
   });
 
 });
-
+var port = process.env.PORT || 3000;
+console.log(' [*] Listening on 0.0.0.0:' + port);
+server.listen(port, '0.0.0.0');
 
 //mailin.on('authorizeUser', funciton( connection, username, password, done) {
 //  if (username == "colin" && password == "mysecret") {
