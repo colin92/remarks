@@ -5,7 +5,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 var emailSchema = mongoose.Schema({
-  message: String;
+  message: String
 });
 
 var Email = mongoose.model('Email', emailSchema);
