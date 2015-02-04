@@ -15,7 +15,10 @@ var MailParser = require('mailparser').MailParser;
 router.post('/incoming-email', function(req, res) {
   console.log('incoming email');
   var chunks = [];
-  req.on('data', chunks.push.bind(chunks));
+  req.on('data', function(chunks) {
+    console.log(chunks);
+    chunks.push.bind(chunks);
+  });
   req.on('end', function() {
     console.log('request:', req);
     var mailparser = new MailParser();
