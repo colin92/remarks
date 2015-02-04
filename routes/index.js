@@ -38,8 +38,7 @@ router.post('/incoming-email', function(req, res) {
     });
     console.log('req.body.message: ', req.body.message);
      
-    var params = JSON.parse(req.body);
-    mailparser.write(params['message']);
+    mailparser.write(req.body.message);
     mailparser.end();
 //  });
 });
