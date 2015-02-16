@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+// variables
+
+$columns: 12;
+$container-min-width: 500px;
+$container-max-width: 50%;
+$title-font: "Open Sans", Sans;
+
+
+// mixins
+
+
+// grid system
+
+
+// styles
+body > h1 {
+  font-family: $title-font;
+}
+
+.entry > h2 {
+  font-family: $title-font;
+}
+
+.entry p {
+  font-family: $title-font;
+  font-weight: light;
+}

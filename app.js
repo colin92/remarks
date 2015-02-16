@@ -1,13 +1,12 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
 var marked = require('marked');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var sass = require('node-sass-middleware');
 
 var app = express();
 
@@ -16,49 +15,22 @@ app.engine('html', swig.renderFile);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-// mailin test stuff
-var emails = [];
-//var mailin = require('mailin');
-//
-//mailin.start({
-//  port: 25,
-//  disableWebhook: true
-//});
 
-
-//app.addListener('request', function(req, res) {
-//  var chunk = [];
-//  req.on('data', chunks.push.bind(chunks));
-//  req.on('end', function() {
-//    var mailparser = new MailParser();
-//    mailparser.on('end', function(mail_object) {
-//      res.writeHead(200, { 'content-type': 'text/plain'});
-//      res.end();
-//    });
-//    var params = querystring.parse(chunks.join('').toString());
-//    mailparser.write(params[message]);
-//    mailparser.end();
-//  });
-//
-//});
-
-//mailin.on('authorizeUser', funciton( connection, username, password, done) {
-//  if (username == "colin" && password == "mysecret") {
-//    done(null, true);
-//  }
-//  else {
-//    done(new Error("Unauthorized!"), false);
-//  }
-//});
-
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(
+  sass({
+    src: __dirname + '/assets',
+    dest: __dirname + '/public',
+    debug: true,
+    outputStyle: 'nested',
+  })
+);
+
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static(path.join(__dirname, 'client/lib')));
 
 app.use('/', routes);
 app.use('/users', users);
