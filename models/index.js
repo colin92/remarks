@@ -6,6 +6,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 var emailSchema = mongoose.Schema({
   date: { type: Date, default: Date.now() },
+  title: String,
   message: String
 });
 
