@@ -45,7 +45,7 @@ router.post('/incoming-email', function(req, res) {
                   'subject: ', mail_object.subject,
                   'message text: ', mail_object.text
                   );
-      if (mail_object.from.address === 'colinmeret@gmail.com') {
+      if (mail_object.from[0].address === 'colinmeret@gmail.com') {
         console.log('correct sender...saving email');
         model.create({ title: mail_object.subject, message: mail_object.text });
         console.log('email saved');
