@@ -33,6 +33,9 @@
   font-size: 35px;
   font-family: "Open Sans", Sans; }
 
+.entry p {
+  text-align: justify; }
+
 .entry p, .entry ul {
   margin: 20%;
   margin-top: 20px;

@@ -3,7 +3,7 @@ var app = angular.module('myApp', []);
 app.controller('mainController', function($sce, $scope, getEntries) {
   $scope.entry = 'hello world';
   getEntries().then(function(data) {
-      $scope.entries = data.map(function(email) {
+      $scope.entries = data.reverse().map(function(email) {
         email.message = $sce.trustAsHtml(email.message);
         return email;
       });

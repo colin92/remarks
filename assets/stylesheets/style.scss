@@ -70,6 +70,10 @@ $title-font: "Open Sans", Sans;
   font-family: $title-font;
 }
 
+.entry p {
+  text-align: justify;
+}
+
 .entry p, .entry ul {
   margin: 20%;
   margin-top: 20px;
