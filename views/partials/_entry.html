@@ -1,2 +1,4 @@
-<div class="entry" ng-bind-html="entry">
+<div class="entry"> 
+<div class="entry-date">{{ entry.date | date }}</div>
+<div ng-bind-html="entry.message"></div>
 </div>

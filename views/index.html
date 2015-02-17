@@ -3,14 +3,20 @@
   <head>
     <title>Re:marks</title>
     <link rel="stylesheet" href="/stylesheets/style.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
     <script src="/angular/angular.js"></script>
     <script src="/javascripts/app.js"></script>
   </head>
   <body ng-app="myApp" ng-controller="mainController">
-    <h1>Re:marks</h1>
+    <div class="page-header">
+      <h1>Re:marks</h1>
 
-    <h4>A Web Development Blog</h4>
-    <h5>by Colin Meret</h5>
-    <entry ng-repeat="entry in entries"></entry>
+      <h2>A Web Development Blog</h2>
+      <h3>by Colin Meret</h3>
+    </div>
+    <div class="entries">
+      <entry ng-repeat="entry in entries"></entry>
+    </div>
   </body>
 </html>

@@ -13,10 +13,14 @@ router.get('/', function(req, res) {
 
 router.get('/entries', function(req, res) {
   model.find({}, function(err, emails) {
-    var markedEmails = emails.map(function(email) { return marked(email.message); });
+    var markedEmails = emails.map(function(email) { 
+      email.message = marked(email.message); 
+      return email;
+    });
     res.send( markedEmails );
   });
 });
+
 // mail2webhook test
 var querystring = require('querystring');
 var MailParser = require('mailparser').MailParser;
@@ -42,7 +46,7 @@ router.post('/incoming-email', function(req, res) {
                   'message text: ', mail_object.text
                   );
       if (mail_object.from.address === 'colinmeret@gmail.com') {
-        model.create({ message: mail_object.text });
+        model.create({ title: mail_object.subject, message: mail_object.text });
       }
       res.writeHead(200, {'content-type': 'text/plain'});
       res.end();

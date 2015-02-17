@@ -15,15 +15,74 @@ $title-font: "Open Sans", Sans;
 
 
 // styles
-body > h1 {
+
+* {
+  box-sizing: border-box;
+}
+
+
+// Header styling
+
+.page-header {
+  width: 400px;
+  margin: auto;
   font-family: $title-font;
 }
 
-.entry > h2 {
+.page-header h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+.page-header h2, .page-header h3 {
+  text-align: right;
+}
+
+.page-header h2 {
+}
+
+.page-header h3 {
+}
+
+
+// Entry styling
+
+.entries {
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.entry {
+  clear: both;
+  margin-top: 50px;
+}
+
+.entry .entry-date {
+  font-family: $title-font;
+  font-size: 20px;
+  float: right;
+}
+
+.entry > div > h2 {
+  padding-left: 40px;
+  font-size: 35px;
   font-family: $title-font;
 }
 
-.entry p {
+.entry p, .entry ul {
+  margin: 20%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.entry p, .entry li {
   font-family: $title-font;
   font-weight: light;
+}
+
+.entry code {
+  background-color: #F9F2F4; // hsla(0, 100%, 80%, .5);
+  color: #C7254E; // hsl(0, 60%, 30%);
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace; 
 }
