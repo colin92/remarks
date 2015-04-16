@@ -6,7 +6,7 @@ var swig = require('swig');
 var marked = require('marked');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var sass = require('node-sass-middleware');
+//var sass = require('node-sass-middleware');
 
 var app = express();
 
@@ -19,14 +19,14 @@ app.set('view engine', 'html');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(
-  sass({
-    src: __dirname + '/assets',
-    dest: __dirname + '/public',
-    debug: true,
-    outputStyle: 'nested',
-  })
-);
+//app.use(
+//  sass({
+//    src: __dirname + '/assets',
+//    dest: __dirname + '/public',
+//    debug: true,
+//    outputStyle: 'nested',
+//  })
+//);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));

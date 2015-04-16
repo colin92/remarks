@@ -1,4 +1,8 @@
-<div class="entry"> 
-<div class="entry-date">{{ entry.date | date }}</div>
-<div ng-bind-html="entry.message"></div>
-</div>
+<md-card class="entry"> 
+  <md-card-content>
+    <md-button class="md-primary entry-date" ng-click="editEntry($event, entry)">
+      {{ entry.date | date }}
+    </md-button>
+  </md-card-content>
+<md-card-content class="md-padding" ng-bind-html="entry.message | markdown"></md-card-content>
+</md-card>

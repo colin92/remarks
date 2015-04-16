@@ -1,24 +1,3 @@
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ['ngMaterial', 'markdown']);
 
-app.controller('mainController', function($sce, $scope, getEntries) {
-  $scope.entry = 'hello world';
-  getEntries().then(function(data) {
-      $scope.entries = data.reverse().map(function(email) {
-        email.message = $sce.trustAsHtml(email.message);
-        return email;
-      });
-    });
-})
-.factory('getEntries', function getEntriesFactory($http) {
-  return function() { 
-    return $http.get('/entries').then(function(response) {
-      return response.data;
-    });
- };
-})
-.directive('entry', function() {
-  return {
-    restrict: 'E',
-    templateUrl: '/partials/_entry.html'
-  }
-});
+

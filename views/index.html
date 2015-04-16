@@ -1,22 +1,40 @@
-<!doctype HTML>
+<!DOCTYPE html5>
 <html>
   <head>
     <title>Re:marks</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" /> 
+    <link rel="stylesheet" href="/angular-material/angular-material.css" /> 
+    <link rel="stylesheet" href="/angular-material/default-theme.css" /> 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" /> 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
     <script src="/angular/angular.js"></script>
+    <script src="/angular-aria/angular-aria.js"></script>
+    <script src="/angular-animate/angular-animate.js"></script>
+    <script src="/angular-material/angular-material.js"></script>
+    <script src="/showdown/compressed/showdown.js"></script>
+    <script src="/angular-markdown-filter/markdown.js"></script>
     <script src="/javascripts/app.js"></script>
+    <script src="/javascripts/config/theme.js"></script>
+    <script src="/javascripts/controllers/main_controller.js"></script>
+    <script src="/javascripts/factories/get_entry.js"></script>
+    <script src="/javascripts/factories/edit_entry.js"></script>
+    <script src="/javascripts/directives/entry.js"></script>
   </head>
-  <body ng-app="myApp" ng-controller="mainController">
-    <div class="page-header">
+  <body ng-app="myApp" ng-controller="mainController" layout="column">
+    <!-- <div class="page-header">
       <h1>Re:marks</h1>
 
       <h2>A Web Development Blog</h2>
       <h3>by Colin Meret</h3>
-    </div>
-    <div class="entries">
+    </div> -->
+    <md-toolbar class="page-header xmd-tall" layout="row" layout-align="center center">
+      <h1 class="md-toolbar-tools" flex="25"><span>Re:marks</span></h1>
+      <h2 class="md-toolbar-tools" flex="25"><span>A Web Development Blog</span></h2>
+      <h2 class="md-toolbar-tools" flex="25"><span>by Colin Meret</span></h2>
+    </md-toolbar>
+    <md-content ng-hide="loading" class="entries">
       <entry ng-repeat="entry in entries"></entry>
-    </div>
+    </md-content>
+    <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
   </body>
 </html>

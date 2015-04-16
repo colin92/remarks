@@ -1,40 +1,81 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800);
+body {
+  background-image: url('/images/splash2.jpg'); }
+
 * {
   box-sizing: border-box; }
 
+md-progress-circular {
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  right: 50%; }
+
+/*
 .page-header {
   width: 400px;
   margin: auto;
-  font-family: "Open Sans", Sans; }
+  font-family: $title-font;
+}
 
 .page-header h1 {
   font-size: 60px;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 0px;
+}
 
 .page-header h2, .page-header h3 {
-  text-align: right; }
+  text-align: right;
+}
+
+.page-header h2, .page-header h3 {
+  margin-right: 75px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+*/
+.md-toolbar-tools * {
+  margin: auto; }
+
+h1.md-toolbar-tools {
+  font-size: 60px; }
+
+h2.md-toolbar-tools span {
+  margin-bottom: 5px; }
 
 .entries {
-  width: 60%;
+  background-image: url('/images/splash2.jpg');
   margin: auto;
-  margin-top: 50px; }
+  margin-top: -10px;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 50px; }
 
 .entry {
+  background: rgba(255, 255, 255, 0.9);
   clear: both;
-  margin-top: 50px; }
+  padding: 50px 0px 150px 0px;
+  margin: 50px 0px; }
 
 .entry .entry-date {
   font-family: "Open Sans", Sans;
   font-size: 20px;
-  float: right; }
+  float: right;
+  margin-right: 50px; }
 
 .entry > div > h2 {
+  width: 80%;
+  margin: 0px, 50px;
   padding-left: 40px;
   font-size: 35px;
   font-family: "Open Sans", Sans; }
 
-.entry p {
-  text-align: justify; }
+.entry hr, .entry h2 {
+  margin: 0px 50px 20px 50px;
+  font-size: 2em; }
+
+.entry strong {
+  font-weight: bold; }
 
 .entry p, .entry ul {
   margin: 20%;
@@ -48,4 +89,7 @@
 .entry code {
   background-color: #F9F2F4;
   color: #C7254E;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace; }
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace; }
+
+md-dialog {
+  min-width: 50%; }

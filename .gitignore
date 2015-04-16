@@ -1,6 +1,7 @@
-*.swp
-*.swo
+**/*.swp
+**/*.swo
+**/*.swn
 .DS_Store
 
 /node_modules/
-
+client/

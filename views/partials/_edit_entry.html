@@ -1,0 +1,24 @@
+<md-dialog>
+  <md-toolbar class="md-accent md-hue-2 md-sticky-no-effect">
+    <h2 class="md-toolbar-tools">{{ entry.title }} -- Edit</h2>
+  </md-toolbar>
+  <md-content layout="row">
+    <md-content flex="50">
+      <md-input-container flex>
+        <label><h2>Title</h2></label>  
+        <input type="text" ng-model="entry.title" placeholder="Please include a title">
+      </md-input-container>
+      <md-input-container flex>
+        <label><h2>Entry text (markdown)</h2></label>  
+        <textarea rows="20" ng-model="entry.message"></textarea>
+      </md-input-container>
+    </md-content> 
+    <md-content layout="column" flex="50">
+      <md-subheader><h1>Preview</h1></md-subheader>
+      <entry></entry>
+    </md-content>
+  </md-content>
+  <div class="md-actions" layout="row">
+    <md-button class="md-primary" ng-click="submitEdit(entry)">Submit</md-button>
+  </div>
+</md-dialog>
