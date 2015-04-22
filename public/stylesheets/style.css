@@ -74,6 +74,9 @@ h2.md-toolbar-tools span {
   margin: 0px 50px 20px 50px;
   font-size: 2em; }
 
+.entry p img, .entry img {
+  width: 100%; }
+
 .entry strong {
   font-weight: bold; }
 
