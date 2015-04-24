@@ -10,15 +10,20 @@
 .entry {
   background: hsla(0, 100%, 100%, 0.9);
   clear: both;
-  padding: 50px 0px 150px 0px;
+  padding: 30px 0px 150px 0px;
   margin: 50px 0px;
+}
+
+.entry .date-container {
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 .entry .entry-date {
   font-family: $title-font;
   font-size: 20px;
-  float: right;
-  margin-right: 15%;
 }
 
 .entry > div > h2 {
@@ -36,6 +41,7 @@
 
 .entry p img, .entry img {
   width: 100%;
+  margin-bottom: 25px;
 }
 
 
@@ -52,6 +58,8 @@
 .entry p, .entry li {
   font-family: $title-font;
   font-weight: light;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .entry code {

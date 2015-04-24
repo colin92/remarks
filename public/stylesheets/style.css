@@ -54,14 +54,17 @@ h2.md-toolbar-tools span {
 .entry {
   background: rgba(255, 255, 255, 0.9);
   clear: both;
-  padding: 50px 0px 150px 0px;
+  padding: 30px 0px 150px 0px;
   margin: 50px 0px; }
+
+.entry .date-container {
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 
 .entry .entry-date {
   font-family: "Open Sans", Sans;
-  font-size: 20px;
-  float: right;
-  margin-right: 15%; }
+  font-size: 20px; }
 
 .entry > div > h2 {
   width: 80%;
@@ -75,7 +78,8 @@ h2.md-toolbar-tools span {
   font-size: 2em; }
 
 .entry p img, .entry img {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 25px; }
 
 .entry strong {
   font-weight: bold; }
@@ -87,7 +91,9 @@ h2.md-toolbar-tools span {
 
 .entry p, .entry li {
   font-family: "Open Sans", Sans;
-  font-weight: light; }
+  font-weight: light;
+  font-size: 20px;
+  line-height: 25px; }
 
 .entry code {
   background-color: #F9F2F4;
