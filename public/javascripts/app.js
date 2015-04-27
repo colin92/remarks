@@ -1,3 +1,3 @@
-var app = angular.module('myApp', ['ngMaterial', 'markdown']);
+var app = angular.module('myApp', ['ngMaterial']);
 
 

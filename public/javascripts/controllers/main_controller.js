@@ -3,7 +3,8 @@ app.controller('mainController', function($sce, $scope, getEntries, editEntry) {
   $scope.loading = true;
   getEntries().then(function(data) {
       $scope.entries = data.map(function(email) {
-        email.messageHtml = $sce.trustAsHtml(email.messageHtml);
+      markedHtml = marked(email.messageHtml);
+        email.messageHtml = $sce.trustAsHtml(markedHtml);
         return email;
       });
       $scope.loading = false;
